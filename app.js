@@ -14,6 +14,8 @@
 */
 // React.createElement always returns an object (React Element, which is JavaScript object) and at the end of the DynamicsCompressorNode, 
 // the render function converts that object into the tag to display on the browser
+import React from "react";
+import ReactDOM from "react-dom/client";
 const parent = React.createElement(
     "div",
     {id:"parent"},
