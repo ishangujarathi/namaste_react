@@ -46,7 +46,7 @@ The JSX code behind the scenes is converted to React.createElement() only and th
 Babel is converting the JSX Code into React.createElement() code.
 
 Example:
-    JSX Code -> const heading = <h1>Namaste React</h1>
+    JSX Code -> const heading = <h6>Namaste React</h6>
     Code converted by Babel -> const heading = /*#__PURE__#*/React.createElement("h1",null,"Namaste React")
 
 To give attributes inside JSX, we have to follow camelCase syntax.
