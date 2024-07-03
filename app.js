@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 //React Element
-const Title = () => (
+const title  = (
     <h1 className="head" tabIndex="5">    
     Namaste React inside JSX🚀
     </h1>)
@@ -12,9 +12,7 @@ const Title = () => (
 
 const HeadingComponenet = () => (
     <div id="container">
-        {Title()}
-        <Title></Title>
-        <Title/>
+        {title}
         <h1 className="heading">Namaste React Functional Component🚀</h1>
     </div> 
 )
