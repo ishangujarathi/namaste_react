@@ -64,5 +64,12 @@ Inside functional component(inside JSX), we can inject any piece of JS code insi
 Inside functional components(inside JSX), we can also call React elements inside {} braces.
 
 
+#Namaste Food Ordering App:
+
+Planning / WireFrame:
+Header-> Logo towards the left, Links towards right, Cart
+Body-> Search Bar, Search Button, Restaurant Cards -> image of food, rating of food items, cuisine names, price etc
+Footer-> Links, Copywrights
+
 
 
