@@ -71,5 +71,10 @@ Header-> Logo towards the left, Links towards right, Cart
 Body-> Search Bar, Search Button, Restaurant Cards -> image of food, rating of food items, cuisine names, price etc
 Footer-> Links, Copywrights
 
+Props(Properties) -> passing props to a component is similar to passing arguments to function.
+Props helps us to pass dynamic data to components.
+We can pass any number of props inside Component, react will wrap all of them as objects and then we can pass them dynamically using {} braces as they are nothing but JS objects!
+
+
 
 
