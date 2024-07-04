@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 /**
  * Components of our Food Ordering App
  * Header -> logo, nav items(home,about etc)
- * Body -> search, rest containers->rest cards
+ * Body -> search, rest containers->rest cards->img,name,cuisines,star rating,delivery time
  * Footer -> copywright, social media links, information, address
  */
 
@@ -25,10 +25,35 @@ const Header = () => {
         </div>
     )
 }
+
+const RestaurantCard = (props) => {
+    console.log(props)
+    return (
+        <div className="res-card" style={{backgroundColor:"#f0f0f0"}}>
+            <img className="res-logo" alt="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/4fe928562d04e0a5c25f335e866dad71"/>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>{props.rating} Stars</h4>
+            <h4>{props.eta} mins</h4>
+        </div>
+    )
+}
+const Body = () => {
+    return(
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="rest-container">
+                <RestaurantCard resName="Meghana Foods" cuisine="Biryanis, North Indian, South Indian" rating="4.4" eta="30"/>
+                <RestaurantCard resName="KFC" cuisine="Burger,Winger Box, Coak" rating="4.2" eta="30"/>
+            </div>
+        </div>
+    )
+}
 const AppLayout = () => {
     return(
         <div className="app">
             <Header/>
+            <Body/>
         </div>
     )
 }
