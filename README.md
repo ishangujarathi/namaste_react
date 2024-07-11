@@ -76,5 +76,14 @@ Props helps us to pass dynamic data to components.
 We can pass any number of props inside Component, react will wrap all of them as objects and then we can pass them dynamically using {} braces as they are nothing but JS objects!
 
 
+In Raeat, there are 2 types of import and export:
+1-Default Import/Export
+export default <component_name>
+import <component_name> from "path"
 
+2-Named Import/Export
+export const <conponent_name>
+import {<component_name>} from "path"
+
+When we have to export multiple things, always use named Exports!
 
