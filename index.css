@@ -5,7 +5,7 @@
 }
 
 .logo {
-    width: 200px;
+    width: 150px;
 }
 
 .nav-items {
@@ -29,9 +29,9 @@
 }
 
 .res-card {
-    margin: 5px;
+    margin: 11px;
     padding: 5px;
-    width: 200px;
+    width: 175px;
 }
 
 .res-card:hover {
@@ -45,4 +45,9 @@
 
 .res-logo {
     width: 100%;
+}
+
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
 }
