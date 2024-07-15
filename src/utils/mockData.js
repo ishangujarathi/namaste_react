@@ -123,7 +123,7 @@ const resList = [
           new: false,
         },
         subtype: "basic",
-      },
+    },
       {
         type: "restaurant",
         data: {
