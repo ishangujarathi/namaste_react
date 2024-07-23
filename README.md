@@ -138,3 +138,42 @@ Why React is fast -> bcoz it has a DIFF Algorithm which can do fast, efficient a
 
 React is constantly keeping an eye on the State Variable, constantly tracking the State Variable created using the useState() React Hook and whenever these state varibles updates, React immediately trigger the diff algorithm, quickly finds out the difference between the 2 virtual DOMs and updates the UI AUTOMAGICALLY!!! It always keeps the UI Layer and the Data Layer in SYNC with eachother, which is the core of React Algorithm!! 
 
+
+#Exploring the World
+
+1) MONOLITHIC ARCHITECTURE -> Traditionally earlier, all web apps were developed using monolithic architecture. Earlier we used to have one huge big project. The project itself had all the codes inside itself like the APIs, UI, Backend, DB Connectivity, Authorization etc.
+
+2) MICROSERVICE ARCHITECTURE -> In today's world, all big tech companies are moving and leveraging towards Monolithic architecture. In Microservices Architecture, we have different services for different jobs, like we have API Service, Backend Service, DB Service, Frontend Service, Auth Service etc and all these small and microservices together form one big application. This is also known as Separation of Concerns and Single Responsibility Principle(SRP), where each individual service has it's own job and application. These individual services talk with eachother like Frontend with Backend to fetch requested data, Backend service with DB to fetch the data etc.
+
+For ex - The Namaste React Project that we are making is a UI Microservice. It is developed in React.One more advantage of Microservices is that we can have different tech-stack for different services. 
+
+All the above services are deployed(run) on their specific ports. Like for ex- currently our Namaste React Project is running on port :1234. On differnet ports, we can deploy different services. At the end of the day, all these services can be mapped to domain name. Like for ex- we can map and deploy all APIs to /api domain name, all SMS to /sms domain name etc.
+
+
+#2 Approaches about how UI or web applications fetch the data from Backend:
+
+1) As soon as our web app loads, we can just make an API call to fetch the data and then render the UI on the page.
+
+2) As soon as the web page loads, we can render the UI, and after that we will make an API call and then again we will re-render our application with new data.
+
+In React, we will always be using the 2nd Approach, because it give better UX(User Experience). Even though we are rendering twice, it doesn't matter cuz React has very fast render cycles!! It has the best Rendering mechanism and renders our UI very fast!
+
+#Introduction to useEffect() React Hook:
+
+In useEffect() function, we will always pass 2 arguments, first is the Arrow Function(which is a callback function) and second is the dependency array.
+ex- useEffect(()=>{},[]); The callback function will be called, after our component renders! When the Body Component will render and as soon as the render cycle is finised, it will call the useEffect() callback function.
+
+#TRICKY QUESTION:
+const Body()
+{
+useEffect(()=>{
+    console.log("Ishan");
+},[]);
+
+console.log("Gujarathi");
+}
+
+O/P -> The console will first log Gujarathi and then Ishan, because the useEffect() callback function is called after the Component is rendered fully!!!
+
+
+We require the useEffect() hook to make an API call after the componet is rendered, as dicuseed in approach 2.
