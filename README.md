@@ -177,3 +177,36 @@ O/P -> The console will first log Gujarathi and then Ishan, because the useEffec
 
 
 We require the useEffect() hook to make an API call after the componet is rendered, as dicuseed in approach 2.
+
+
+Some Important points about useEffect() React Hook and useState() React Hook:
+
+1) useEffect() React Hook consists of 2 parameters, first is the CallBack Function and second is the dependency array. (dependency array is optional parameter);
+
+2) useEffect() React Hook is called after our web page is rendered.
+
+3) If we do not specify the dependency array, our useEffect() React Hook will be called everytime we render our component. useEffect(()=>{});
+
+4) If we pass an empty dependency array, our useEffect() React Hook will only be called once intially when our component renders. useEffect(()=>{},[]);
+
+5) If we pass anything into the dependency array, then the useEffect() React Hook will be called upon changes into the passed dependency.
+
+6) Always create/declare useState() and create state variables inside the component, never create them outside as it will throw some error.
+
+7) Always create/declare useState() at the top of functional component.
+
+8) Never create/declare useState() inside any loops(if,for etc).
+
+
+#Introduction to React Routers:
+
+Firstly we installed a package npm i react-router-dom
+Whenever we have developed routes, we have to develop routing configurations.
+
+The createBrowserRouter Configurations takes an array of lists(objects), where we pass path: "" and the element: "<component_name/>" to render if we pass the specified path in URL. Each object determines the different paths and what should happend on that path. 
+
+After creating the configurations, we have to provide the configurations to Render it. React-Router-dom provides use with another component knows as Routerprovider, which helps us to provide the configurations created to our webapp (app.js).
+
+Children Routers -> When we want our Header,Footer to stay intact across all of our web pages, we use Childern Routing Concept. React-Router dom provides us with Outlet component. We have to specify children, which is again a list of paths, where again each path is object representing the path and element to render based upon the path specified. The path gets replaced with Outlet component, based upon path specified.
+
+Link to -> Another Component provided by react-router-dom which helps us to give links (similar to <a href=""> ... </a> tag), which is used to link pages. Special feature it provides is that it does not reloads the web page, which leads to optimization of our web app.
