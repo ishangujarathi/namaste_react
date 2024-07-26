@@ -12,8 +12,7 @@ const Body = () => {
   const [searchText, setsearchText] = useState("");
 
   //whenever a State Variable changes, React Trigger's a Reconciliation algorithm (re-renders the entire component);
-  console.log("Body Rendered");
-
+  
   useEffect(()=>{
     fetchData();
   },[])
