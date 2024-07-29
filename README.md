@@ -210,3 +210,13 @@ After creating the configurations, we have to provide the configurations to Rend
 Children Routers -> When we want our Header,Footer to stay intact across all of our web pages, we use Childern Routing Concept. React-Router dom provides us with Outlet component. We have to specify children, which is again a list of paths, where again each path is object representing the path and element to render based upon the path specified. The path gets replaced with Outlet component, based upon path specified.
 
 Link to -> Another Component provided by react-router-dom which helps us to give links (similar to <a href=""> ... </a> tag), which is used to link pages. Special feature it provides is that it does not reloads the web page, which leads to optimization of our web app.
+
+Link to just refreshes the component, instead of reloading the entire page. That is why React is also knows as Single Page Aplication. Our web app is a single big component and routing just refreshes new components and does not load entire web page. The components are interchangable, that is whenever we have to navigate we can easily do without loading entire page.
+
+Link behind the scenes is <a href="">...</a> (anchor) tag only. Link basically wraps te anchor tag. React-Router dom will enable that it is a Link and it will not reload the entire web page just replace components!
+
+#Types of Routing:
+
+1) Server Side Routing - Server-side routing manages routing and navigation on the server. When a user requests a different URL, the server generates and sends a new HTML page for that route. Network calls are associated and the data/component is fetched from the server and rendered as HTML on the client side(browser).
+
+2) Client Side Routing - In client-side routing, routing and navigation are managed on the client side, typically within the web browser. Client-side Routing is suitable for Single Page Application. Different components developed are interchangebale/refreshed via Routing, without requirng any network calls.
