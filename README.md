@@ -220,3 +220,16 @@ Link behind the scenes is <a href="">...</a> (anchor) tag only. Link basically w
 1) Server Side Routing - Server-side routing manages routing and navigation on the server. When a user requests a different URL, the server generates and sends a new HTML page for that route. Network calls are associated and the data/component is fetched from the server and rendered as HTML on the client side(browser).
 
 2) Client Side Routing - In client-side routing, routing and navigation are managed on the client side, typically within the web browser. Client-side Routing is suitable for Single Page Application. Different components developed are interchangebale/refreshed via Routing, without requirng any network calls.
+
+#Introduction to Class Based Components
+
+-Developing Components using Class Bases technique is an older way.
+-As Functional Components in React are nothing but normal JS Components which return some JSX code, Class Based Components in React are also normal JS Class.
+-To develop a Class based component, we have to extend it from React.Components and we have a Render method like render(), which returns some piece of JSX code, which is rendered on the browser.
+ex class <component_name> extends React.Component{
+    render(){
+        return <JSX_Code>
+    }
+}
+
+Class Based Component is a Normal JS Class, which has a render method, which returns some piece of JSX code.
