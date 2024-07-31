@@ -233,3 +233,38 @@ ex class <component_name> extends React.Component{
 }
 
 Class Based Component is a Normal JS Class, which has a render method, which returns some piece of JSX code.
+
+Loading a class based component on the webpage is basically creating an instance of that class. Whenever we create an instance of any class, the constructor method is called. So in class based components, it is best to pass the props and create state variables inside the constructor method.
+
+constructor(){
+    super();
+
+    this.state = {
+
+    };
+};
+
+The this.state{} is a big object, that will contain all possible state variables.
+To update the state variables in class based components, first of all NEVER UPDATE STATE VARAIBLES DIRECTLY.
+To update state variables, React provides us with a special function this.setState(). The function can be used anywhere inside the class. Inside the function, we will pass in an object, which will contain an updated value of our state variables.
+Everytime the state varaibles gets updated, React will re-render the entire component.
+
+
+#LIFECYCLE OF REACT CLASS-BASED COMPONENT / HOW IS THE CLASS BASED COMPONENT MOUNTED/LOADED ONTO THE WEBPAGE
+
+Class Based Components have very important methods -> constructor(), render(), componentDidMount().
+Firstly upon rendering of the class based component, instance of that class is created and the constructor() method is invoked. After that, the render() method is invoked and it renders the piece of JSX code wrapped inside it. If we have are invoking any other class based component inside the render method, there will be similar trigger of the child class based component, where again the child class based component will start rendering and instance of that class will be created and the child class constructor() method will be invoked, followed by the render() method of the child class.
+
+When the component is loaded/invoked/rendered, firstly the constructor() method is invoked, then the render() method and once the class based component is mounted onto the DOM, then the componentDidMount() method is called. 
+
+After the render() method of the child class compoent is rendered fully, and the child class component is mounted/loaded onto the DOM, the child componentDidMount() method is called and after that only the Parent componentDidMount() method will be called.
+
+ex: Flow of Execution of methods:
+Parent construtor()
+Parent render()
+Child construtor()
+Child render()
+Child componentDidMount()
+Parent componentDidMount()
+
+The main and the biggest purpose of componentDidMount() method is basically to make an API call, because onece the component is mounted onto the DOM, then only the componentDidMount() will be called.
