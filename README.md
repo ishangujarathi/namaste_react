@@ -268,3 +268,14 @@ Child componentDidMount()
 Parent componentDidMount()
 
 The main and the biggest purpose of componentDidMount() method is basically to make an API call, because onece the component is mounted onto the DOM, then only the componentDidMount() will be called.
+
+
+
+#Diving Deep into the Lifecycle of React Class Based Component
+
+1) MOUNTING CYCLE/PHASE -> Firstly constructor(dummy) method is called, which updates the set variables with dummy data. Then the render(dummy) method is called, which renders the component with the dummy data passed in. The component is loaded on web page with dummy data for few milli seconds. After that componentDidMount() method is called, which makes an API call. After the API call, we use the this.setstate() method, to update the state variable which contains dummy data initially, with the new data fetched from the API call to the particular endpoint. This marks the finish of our MOUNTING CYCLE/PHASE.
+
+2) UPDATE CYCLE/PHASE -> The setstate() method was called, which triggers the React reconciliation cycle and the Update method begins and again the render() method will be called with the data fetched from the API call. React updates the DOM, i.e the HTML is loaded onto the browser with updated data from the API call. Lastly it will call the componentDidUpdate() method.
+
+
+3) UNMOUNTING CYCLE/PHASE -> When the component will disappear from the web page, that is if we switch to another tab, the componentWillUnmount() method will be called just before unmounting of component.
