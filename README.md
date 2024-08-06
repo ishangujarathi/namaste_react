@@ -297,3 +297,9 @@ Suspense() -> Suspense can be used to handle the loading of asynchronous data,
 such as data from an API. It provides a way to specify a fallback UI (e.g., a loading
 spinner or a message) that is displayed while the data is being fetched. This is
 especially useful for making our application more user-friendly and responsive.
+
+Tailwind CSS -> Advanced technique of styling our webapp, which has inbuit classes, components, icons etc everything for styling our web apps.
+
+#Introduction to Higher Order Components in React:
+
+Higher Order Component is a function that takes a component and returns a component. It takes the component as input, enhances that component and returns it back.

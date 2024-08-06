@@ -1,4 +1,4 @@
-import RestaurantCard from "./Restaurantcard";
+import RestaurantCard,{withOfferstext} from "./Restaurantcard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,7 +11,11 @@ const Body = () => {
   const [listofRestaurants,setlistofRestaurants] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
 
+  console.log(listofRestaurants);
+
   const [searchText, setsearchText] = useState("");
+
+  const RestaurantCardwithOffers = withOfferstext(RestaurantCard);
 
   //whenever a State Variable changes, React Trigger's a Reconciliation algorithm (re-renders the entire component);
   
@@ -64,7 +68,11 @@ const Body = () => {
         <div className=" flex flex-wrap">
           {filteredRestaurant.map((restaurant) => (
             <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-            <RestaurantCard resData={restaurant} />
+             {restaurant.info.aggregatedDiscountInfoV3 ? (
+              <RestaurantCardwithOffers resData={restaurant} />
+             ) : (<RestaurantCard resData={restaurant} />
+             )
+            }
           </Link>
           ))}
         </div>
