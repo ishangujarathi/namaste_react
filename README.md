@@ -303,3 +303,7 @@ Tailwind CSS -> Advanced technique of styling our webapp, which has inbuit class
 #Introduction to Higher Order Components in React:
 
 Higher Order Component is a function that takes a component and returns a component. It takes the component as input, enhances that component and returns it back.
+
+Important part of any React application is basically to manage it's Data. All React applications have 2 Layer -> UI Layer and Data Layer. The UI Layer is always powered, governed by the Data Layer, also known as Config Driven UI. Data Layer consists of all props, states, local variables etc. Hence it is important to manage the data of the data layer for optimal performance of UI layer and web apps.The UI layer consists of the JSX Code.
+
+Accordian -> It is a UI type, where we can expand and collapse it. It has 2 types, Accordian Body and Accordian Data.
