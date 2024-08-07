@@ -307,3 +307,5 @@ Higher Order Component is a function that takes a component and returns a compon
 Important part of any React application is basically to manage it's Data. All React applications have 2 Layer -> UI Layer and Data Layer. The UI Layer is always powered, governed by the Data Layer, also known as Config Driven UI. Data Layer consists of all props, states, local variables etc. Hence it is important to manage the data of the data layer for optimal performance of UI layer and web apps.The UI layer consists of the JSX Code.
 
 Accordian -> It is a UI type, where we can expand and collapse it. It has 2 types, Accordian Body and Accordian Data.
+
+Controlled and Uncontrolled Components -> When RestaurantCategory had it's own state and state variables, it was uncontrolled component beacuse each category had it's own state variable. Now we have lifted up the state and have removed the state variable of RestaurantCategory and we have given the control to it's Parent RestaurantMenu and are passing the showItems component as a prop by specifying false/true as it's value. So the RestaurantCategory is now a Controlled Component.
