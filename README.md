@@ -309,3 +309,19 @@ Important part of any React application is basically to manage it's Data. All Re
 Accordian -> It is a UI type, where we can expand and collapse it. It has 2 types, Accordian Body and Accordian Data.
 
 Controlled and Uncontrolled Components -> When RestaurantCategory had it's own state and state variables, it was uncontrolled component beacuse each category had it's own state variable. Now we have lifted up the state and have removed the state variable of RestaurantCategory and we have given the control to it's Parent RestaurantMenu and are passing the showItems component as a prop by specifying false/true as it's value. So the RestaurantCategory is now a Controlled Component.
+
+Props Drilling -> Very important data management (data layer) concept in React. As our web application grows, there can be many many components, nesting among components. In React, passing of data is a one way stream, that is from parent to children components, to their children components etc. If we want to pass some data from the parent to child node at some 1-2 level down, we can pass as props from parent to it's children. Then from the children to it's children. Basically we are passing props across levels, that is we are doing props drilling. But this is now a good way cuz we have many many components and we cant just pass props across all level....! To overcome this problem, React gives us another superpower knows as REACT CONTEXT!!! Using React Context, we can easily avoid Props Drilling. React Context is basically like a Global Place where we can have our data, from where any body can access the data!!
+
+Examples of data where we need the data anywhere and everywhere in our web app are -> login info of user, theme of our web app (light/dark).
+
+React Context solves the problem of Props Drlling.
+
+React gives us a special utility function to create Context known as createContext({
+    //pass in some default information which can be accessed from anywhere
+}).
+
+We can use the Context created anywhere in our code using another special React Hook known as useContext().
+
+ex-> const data = useContext(name of the context created)
+
+We can create multiple contexts.
