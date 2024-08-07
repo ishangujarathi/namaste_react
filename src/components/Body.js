@@ -1,8 +1,9 @@
 import RestaurantCard,{withOfferstext} from "./Restaurantcard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 
 const Body = () => {
@@ -10,8 +11,6 @@ const Body = () => {
   //Local State Variable -> Super Powerful Variable
   const [listofRestaurants,setlistofRestaurants] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
-
-  console.log(listofRestaurants);
 
   const [searchText, setsearchText] = useState("");
 
@@ -22,6 +21,8 @@ const Body = () => {
   useEffect(()=>{
     fetchData();
   },[])
+
+  
 
   const fetchData = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -37,6 +38,8 @@ const Body = () => {
     return <h1>Looks like you're Offline!! Please check your Internet Connection!</h1>
   };
 
+  const { loggedInUser, setuserName } = useContext(UserContext);
+  
   return listofRestaurants.length === 0 ? (
   <Shimmer/>
     ) :  (
@@ -64,6 +67,13 @@ const Body = () => {
             console.log(listofRestaurants);
           }}>Top Rated Restaurants</button>
           </div> 
+          <div className="search m-4 o-4 flex items-center">
+            <label>UserName:</label>
+            <input className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setuserName(e.target.value)
+            }/>
+          </div>
         </div>
         <div className=" flex flex-wrap">
           {filteredRestaurant.map((restaurant) => (
