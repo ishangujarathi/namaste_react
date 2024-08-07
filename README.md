@@ -325,3 +325,26 @@ We can use the Context created anywhere in our code using another special React 
 ex-> const data = useContext(name of the context created)
 
 We can create multiple contexts.
+
+
+#Introduction to Redux in React (useful for state management, works towards the data layer):
+
+REDUX is not a Mandatory thing while building small or medium sized application. But for building large sized application, where data is heaving used, there are lot of components, lot of data is transfered among components, then Redux definetly helps us to achieve efficient data management.
+
+REDUX AND REACT ARE TOTALLY INDEPENDENT LIBRARIES.
+
+REDUX offers easy debugging to our application. 
+
+We will be using the latest Redux ToolKit Library.(RTK)
+
+Redux Store -> Redux Store is a big object and it is kept in a central global space. A lot of data is basically stored into the Redux Store. Just to ensure that our Redux Store does not become clumsy and overflow, we have slices inside our Redux Store. Slices can be assumed as small portions of Redux Store.
+For example- In our Online Food Ordering web application, if we want to store user related info into our Redux Store we can have a user slice, if we cant to store our ordered items related info we can have a cart slice and similarly etc. Initially they are empty objects.
+
+If we click on the Add+ button we cannot directly modify the daya inside lets say the cart slice. When we click on the Add+ button, it DISPATCHES an ACTION. Then it calls a FUNCTION and then the FUNCTION modifies the data inside the cart slice. The FUNCTION is known as a REDUCER.
+
+WHEN WE PRESS THE ADD+ BUTTON, IT DISPATCHES AN ACTION, WHICH CALLS THE REDUCER FUNCTION WHICH UPDATES THE SLICE OF OUR REDUX STORE. (This is particularly done to write the data or modify the data isnide our slice of Redux Store)
+
+To Read the data from the slice of our Redux Store we use SELECTOR. We use SELECTOR to read the data from our Slice of the Redux Store and the SELECTOR will update our React Component. This overall process is known as SUBSCRIBING TO THE STORE.
+
+WHEN WE CLICK ON THE ADD+ BUTTON, IT WILL DISPATCH AN ACTION, WHICH WILL CALL THE REDUCER FUNCTION, WHICH WLL MODIFIES THE SLICE OF OUR REDUX STORE AND THROUGH SELECTOR, IT WILL GET UPDATED ONTO THE REACT COMPONENT AS THE REACT COMPONENT IS SUBSCRIBED TO THE STORE.
+

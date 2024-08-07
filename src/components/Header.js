@@ -33,7 +33,7 @@ const Header = () => {
             <li className="px-5">
               <Link to="/groccery"> Groccery </Link>
             </li>
-            <li className="px-5">Cart</li>
+            <li className="px-5 font-bold text-xl">Cart</li>
             <button className="login px-5" onClick={()=>{
               btnName === "Login" ? setbtnName("Logout") : setbtnName("Login");
             }}>{btnName}</button>
