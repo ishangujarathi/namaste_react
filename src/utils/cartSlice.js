@@ -20,5 +20,14 @@ const cartSlice = createSlice({
     }
 });
 
+// The createSlice function will return an object and it will look like ->
+ 
+// {
+//      actions: {
+//          addItem
+//      },
+//      reducer
+// }
+
 export const {addItem, removeItem, clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
