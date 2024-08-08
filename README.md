@@ -348,3 +348,17 @@ To Read the data from the slice of our Redux Store we use SELECTOR. We use SELEC
 
 WHEN WE CLICK ON THE ADD+ BUTTON, IT WILL DISPATCH AN ACTION, WHICH WILL CALL THE REDUCER FUNCTION, WHICH WLL MODIFIES THE SLICE OF OUR REDUX STORE AND THROUGH SELECTOR, IT WILL GET UPDATED ONTO THE REACT COMPONENT AS THE REACT COMPONENT IS SUBSCRIBED TO THE STORE.
 
+The createSlice function will return an object and it will look like ->
+ 
+{
+     actions: {
+         addItem
+     },
+     reducer
+}
+
+After creating the slice, we have to add it to the store. The store itself has a big reducer and every slice has it's own reducer as well.
+
+After creating and adding the slice into our Redux store, inorder to read the data from the Redux store into our React Component, we use Selector. A selector is nothing but a Hook inside React. 
+
+To dispatch an action on click on the Add+ button, we use the useDispatch() hook provided by the react-redux library.
