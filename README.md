@@ -362,3 +362,24 @@ After creating the slice, we have to add it to the store. The store itself has a
 After creating and adding the slice into our Redux store, inorder to read the data from the Redux store into our React Component, we use Selector. A selector is nothing but a Hook inside React. 
 
 To dispatch an action on click on the Add+ button, we use the useDispatch() hook provided by the react-redux library.
+
+Time For Testing:
+
+Testing is very crucial part of SoftWare Development Cycle. It is important to write test cases to make sure our web app runs smoothly.
+
+Different Types of Developer Testing:
+
+1) Manual Testing -> Manually checking and testing each feature developed.
+
+2) Unit Testing -> It means we test our React Components in isolation.
+
+3) Integration Testing -> A Type of testing which involves writing code to test multiple components.
+
+4) End to End Testing(e2e Testing) -> Involves testing of all flows right from user login to user exiting the web app, testing all flows.
+
+Libraries required for testing:
+
+1) React Testing Library -> https://testing-library.com/docs/react-testing-library/intro/
+2) Jest -> https://jestjs.io/docs/getting-started
+3) Jest with Babel Dependencies -> https://jestjs.io/docs/getting-started
+
