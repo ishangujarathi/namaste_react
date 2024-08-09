@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faDollarSign, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { faRupeeSign } from "@fortawesome/free-solid-svg-icons/faRupeeSign";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const ItemList = ({ items }) => {
           <div className="w-8/12 pr-4">
             <h3 className="font-semibold text-lg mb-2">{item.card.info.name}</h3>
             <div className="flex items-center mb-2 text-gray-800">
-              <FontAwesomeIcon icon={faDollarSign} className="mr-1 text-green-600" />
+              <FontAwesomeIcon icon={faRupeeSign} className="mr-1 text-green-600" />
               <span>
                 {item.card.info.price
                   ? item.card.info.price / 100
