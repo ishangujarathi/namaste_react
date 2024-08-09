@@ -2,15 +2,24 @@ import { CDN_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faDollarSign } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faDollarSign, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemList = ({ items }) => {
-
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
     // Dispatch an action
     dispatch(addItem(item));  // the item will be passed as an object like { payload: "item" }
+
+    // Display success message
+    toast.success(
+      <div className="flex items-center">
+        <FontAwesomeIcon icon={faCheckCircle} className="mr-2" />
+        Item added to Cart Successfully!
+      </div>
+    );
   };
 
   return (
