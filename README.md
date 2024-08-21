@@ -404,3 +404,5 @@ ex-> test("some string",()=>{
     expect(res).toBe(c);  //known as Assertion
 })
 
+To run test cases, type this command -> npm run test
+
