@@ -383,3 +383,24 @@ Libraries required for testing:
 2) Jest -> https://jestjs.io/docs/getting-started
 3) Jest with Babel Dependencies -> https://jestjs.io/docs/getting-started
 
+# Setting up Testing in our web app:
+-> Install various React Testing Libraries
+-> Install Jest
+-> Install Babel Dependency
+-> Configure Babel (we will be using this so we have to disable the deafult babel configuration provided by Parcel).
+-> Configure Parcel config to disable default babel configuration
+-> Jest Configuration(npx jest --init)
+-> Selected jsdom as environment where our testcases will be executed/runned.The goal of the jsdom is to emulate enough of a subset of a web browser to be useful for testing.
+-> Install jsdom library.
+
+
+# Steps to write tests:
+
+We write the test function/method, which takes 2 arguments
+ex- test("",()=>{}) "" -> string, which describes the test and ()=>{} callback function where we write the implementation of the testcase.
+
+ex-> test("some string",()=>{
+    const res = xyz(a,b);
+    expect(res).toBe(c);  //known as Assertion
+})
+
