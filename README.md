@@ -392,6 +392,10 @@ Libraries required for testing:
 -> Jest Configuration(npx jest --init)
 -> Selected jsdom as environment where our testcases will be executed/runned.The goal of the jsdom is to emulate enough of a subset of a web browser to be useful for testing.
 -> Install jsdom library.
+-> Whenever we are testing any UI Component inside React, we will have to render the component first on the jsdom.
+-> Install @babel/preset-react -> to maje JSX work in test cases
+-> Include @babel/preset-react inside my Babel Config
+-> Install npm i -D @testing-library/jest-dom
 
 
 # Steps to write tests:
