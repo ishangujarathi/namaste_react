@@ -410,3 +410,9 @@ ex-> test("some string",()=>{
 
 To run test cases, type this command -> npm run test
 
+UI Component testing involves 3 things:
+
+1) Use Render method render(<component_name/>) to render the component onto the jsdom.
+2) Use const data = screen.getBy/getAllby method to query something rendered onto the screen.
+3) Use expect(data).toBe method to assert the queryed data.
+
