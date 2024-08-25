@@ -1,9 +1,10 @@
-import RestaurantCard,{withOfferstext} from "./Restaurantcard";
+import RestaurantCard, {withOfferstext} from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { withOfferstext } from "./RestaurantCard";
 
 
 const Body = () => {
@@ -27,7 +28,6 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-    console.log(json);
     setlistofRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
@@ -64,7 +64,6 @@ const Body = () => {
               (res) => res.info.avgRating > 4
             );
             setlistofRestaurants(filteredlist);
-            console.log(listofRestaurants);
           }}>Top Rated Restaurants</button>
           </div> 
           <div className="search m-4 o-4 flex items-center">

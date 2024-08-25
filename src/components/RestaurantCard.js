@@ -5,7 +5,6 @@ import { faStar, faUtensils, faDollarSign, faClock, faTag } from '@fortawesome/f
 // Basic RestaurantCard Component
 const RestaurantCard = (props) => {
   const { resData } = props;
-  console.log(resData);
   const {
     cloudinaryImageId,
     name,
