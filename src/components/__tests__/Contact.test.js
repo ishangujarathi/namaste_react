@@ -4,22 +4,6 @@ import "@testing-library/jest-dom";
 
 describe("Contact Us Component Test Cases", ()=>{
 
-    beforeAll(()=>{
-        console.log("Before All Test Cases");
-    })
-
-    beforeEach(()=>{
-        console.log("Before Each Test Case");
-    })
-
-    afterEach(()=>{
-        console.log("After Each Test Case");
-    })
-
-    afterAll(()=>{
-        console.log("After All Test Cases");
-    })
-
     it("Should Load Contact Us Component",()=>{
         render(<Contact/>);
         const heading = screen.getByRole("heading");
