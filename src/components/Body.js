@@ -1,4 +1,4 @@
-import RestaurantCard, {withOfferstext} from "./RestaurantCard";
+import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -46,7 +46,7 @@ const Body = () => {
       <div className="body">
         <div className="filter flex">
           <div className="search m-4 p-4">
-            <input type="text" className="border border-solid border-black" value = {searchText} onChange={(e)=>{
+            <input type="text" data-testid = "search_input" className="border border-solid border-black" value = {searchText} onChange={(e)=>{
               setsearchText(e.target.value);
             }}/>
             <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=>{
@@ -63,7 +63,7 @@ const Body = () => {
             const filteredlist = listofRestaurants.filter(
               (res) => res.info.avgRating > 4
             );
-            setlistofRestaurants(filteredlist);
+            setfilteredRestaurant(filteredlist);
           }}>Top Rated Restaurants</button>
           </div> 
           <div className="search m-4 o-4 flex items-center">
