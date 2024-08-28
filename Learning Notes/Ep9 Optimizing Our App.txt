@@ -1,0 +1,14 @@
+#Optimizing our App:
+
+Single Responsibility Principle(SRP) -> Every Component in React should only have a single responsibility or a single functionality. If our component is handling multiple functionalities, we can break/abstract them into multiple components using Custom Hooks Concept so that every component focusess on only a Single Resposibility/Functionality. It is a very important and mandatory System Design Principle.
+
+Custom Hooks -> In React, similar to the Hooks which are provided to us by React, we have develop our own Custom Hooks. React Hooks at the end of the day are just Normal JS Functions which has some speciality, provided to us by React (Special JS Functions). In a very similar way, we can develop our own Custom Hooks. The advantage is that our code would be more optimized, modular and components will be lightweight and moreover, they will have Single Responsibility only.
+
+Parcel, basically is knows as Bundler, which bundles all our js files into a single js file, that is loaded onto the browser. But if there are 1000s of components, the size of the file will be very large and it will take hell lot of time for loading onto the browser. To overcome this issue, while building large scale web applications, break down our app into smaller, modular pieces. Basically instead of one huge JS file, it should be smaller JS files. We will try to make smaaller bundles of thus file. This process is known as Chunking/Code Splitting/Dynamic Bundling/Lazy Loading.
+
+We can obtain such functionality of Code Splitting using the lazy() function, importing as named import from react packgae. Inside lazy() function, we have an import() method and argument it takes is the path of the component that we want to have lazy loaded or on demand loading.
+
+Suspense() -> Suspense can be used to handle the loading of asynchronous data,
+such as data from an API. It provides a way to specify a fallback UI (e.g., a loading
+spinner or a message) that is displayed while the data is being fetched. This is
+especially useful for making our application more user-friendly and responsive.

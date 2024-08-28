@@ -1,0 +1,58 @@
+#Introduction to Class Based Components
+
+-Developing Components using Class Bases technique is an older way.
+-As Functional Components in React are nothing but normal JS Components which return some JSX code, Class Based Components in React are also normal JS Class.
+-To develop a Class based component, we have to extend it from React.Components and we have a Render method like render(), which returns some piece of JSX code, which is rendered on the browser.
+ex class <component_name> extends React.Component{
+    render(){
+        return <JSX_Code>
+    }
+}
+
+Class Based Component is a Normal JS Class, which has a render method, which returns some piece of JSX code.
+
+Loading a class based component on the webpage is basically creating an instance of that class. Whenever we create an instance of any class, the constructor method is called. So in class based components, it is best to pass the props and create state variables inside the constructor method.
+
+constructor(){
+    super();
+
+    this.state = {
+
+    };
+};
+
+The this.state{} is a big object, that will contain all possible state variables.
+To update the state variables in class based components, first of all NEVER UPDATE STATE VARAIBLES DIRECTLY.
+To update state variables, React provides us with a special function this.setState(). The function can be used anywhere inside the class. Inside the function, we will pass in an object, which will contain an updated value of our state variables.
+Everytime the state varaibles gets updated, React will re-render the entire component.
+
+
+#LIFECYCLE OF REACT CLASS-BASED COMPONENT / HOW IS THE CLASS BASED COMPONENT MOUNTED/LOADED ONTO THE WEBPAGE
+
+Class Based Components have very important methods -> constructor(), render(), componentDidMount().
+Firstly upon rendering of the class based component, instance of that class is created and the constructor() method is invoked. After that, the render() method is invoked and it renders the piece of JSX code wrapped inside it. If we have are invoking any other class based component inside the render method, there will be similar trigger of the child class based component, where again the child class based component will start rendering and instance of that class will be created and the child class constructor() method will be invoked, followed by the render() method of the child class.
+
+When the component is loaded/invoked/rendered, firstly the constructor() method is invoked, then the render() method and once the class based component is mounted onto the DOM, then the componentDidMount() method is called. 
+
+After the render() method of the child class compoent is rendered fully, and the child class component is mounted/loaded onto the DOM, the child componentDidMount() method is called and after that only the Parent componentDidMount() method will be called.
+
+ex: Flow of Execution of methods:
+Parent construtor()
+Parent render()
+Child construtor()
+Child render()
+Child componentDidMount()
+Parent componentDidMount()
+
+The main and the biggest purpose of componentDidMount() method is basically to make an API call, because onece the component is mounted onto the DOM, then only the componentDidMount() will be called.
+
+
+
+#Diving Deep into the Lifecycle of React Class Based Component
+
+1) MOUNTING CYCLE/PHASE -> Firstly constructor(dummy) method is called, which updates the set variables with dummy data. Then the render(dummy) method is called, which renders the component with the dummy data passed in. The component is loaded on web page with dummy data for few milli seconds. After that componentDidMount() method is called, which makes an API call. After the API call, we use the this.setstate() method, to update the state variable which contains dummy data initially, with the new data fetched from the API call to the particular endpoint. This marks the finish of our MOUNTING CYCLE/PHASE.
+
+2) UPDATE CYCLE/PHASE -> The setstate() method was called, which triggers the React reconciliation cycle and the Update method begins and again the render() method will be called with the data fetched from the API call. React updates the DOM, i.e the HTML is loaded onto the browser with updated data from the API call. Lastly it will call the componentDidUpdate() method.
+
+
+3) UNMOUNTING CYCLE/PHASE -> When the component will disappear from the web page, that is if we switch to another tab, the componentWillUnmount() method will be called just before unmounting of component.
