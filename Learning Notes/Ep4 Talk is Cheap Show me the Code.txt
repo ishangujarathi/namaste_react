@@ -1,0 +1,34 @@
+#React Components
+1-Class Based Components -> old way, they use JS Classes to create components.
+2-Functional Based Components -> current way, they use JS functions to create components.
+
+While creating any React Component, always we have to use the first letter as Capital, because it is a standard React Way to create Components.
+
+We can render functional components using this sysntax <functional_component_name/>.
+We can call another funtional component inside any other functional component, also known as Component Composition.
+Inside functional component(inside JSX), we can inject any piece of JS code inside {} braces.
+Inside functional components(inside JSX), we can also call React elements inside {} braces.
+
+
+#Namaste Food Ordering App:
+
+Planning / WireFrame:
+Header-> Logo towards the left, Links towards right, Cart
+Body-> Search Bar, Search Button, Restaurant Cards -> image of food, rating of food items, cuisine names, price etc
+Footer-> Links, Copywrights
+
+Props(Properties) -> passing props to a component is similar to passing arguments to function.
+Props helps us to pass dynamic data to components.
+We can pass any number of props inside Component, react will wrap all of them as objects and then we can pass them dynamically using {} braces as they are nothing but JS objects!
+
+
+In Raeat, there are 2 types of import and export:
+1-Default Import/Export
+export default <component_name>
+import <component_name> from "path"
+
+2-Named Import/Export
+export const <conponent_name>
+import {<component_name>} from "path"
+
+When we have to export multiple things, always use named Exports!

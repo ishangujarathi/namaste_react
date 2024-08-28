@@ -1,0 +1,1 @@
+Tailwind CSS -> Advanced technique of styling our webapp, which has inbuit classes, components, icons etc everything for styling our web apps.

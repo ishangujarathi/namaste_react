@@ -1,0 +1,50 @@
+#Getting started with React Hooks!
+Everyone says React is Fast, but the actual reason behind it is that React is faster in DOM Manipulation, which makes React fast and optimised. The UI and the Data Layer are always in Sync with eachother due to faster DOM Manipulation, which optimises our web app and improves efficiency and performance which makes our web app faster and hence the fact that React makes our web app faster!
+
+We are trying to filter the newly created list of restaurants using the JS filter method, but on clicking the button we can only see the changes inside the console, but the UI is not getting updated!! The data layer has changed but the same changes haven't yet been reflected onto the UI layer...this is where React comes into the picture and solves the above problem with the help of React HOOKS!! We have to give the list of restaurants, superpowers of React, it wil become a super-energetic varaible of React, as currently it is only a normal JS let variable with few restaurant card objects!
+
+The superpowerful variable thet we wnat our listofrestaurants to create is also called as a State Variable! To create State Variable, we use React Hooks knows as UseState(). React Hooks at the end of the day is nothing but just normal JS utility functions, which is given to us by React, it is a prebuilt function and has some logic written behind it!
+
+2 of the most widely used and importatnt React Hooks->
+1) useState() -> used to create superpowerful state variables, alwasys import it like named import {} from "react"
+2) useEffect()
+
+useState() -> used to create State Varibles, bcoz it maintains the state of the component
+The scope of local state variable created using useState() hook is within that particular component itself.
+
+useState() -> when we call this JS utility function, it returns a state varaible, to store the state variable we store it inside an array:
+
+const [listofrestaurants] = useState(); -> this is how we create a state varaiable in React
+The listofrestaurants has now turned into a super powerful state variable.
+
+let listofrestaurants = []; -> this is how we create a empty list of in JS.
+const [listofrestaurants] = useStata([]); -> same way of creating in React. Whatever we pass inside the useState() function becomes the default value of our State variable in React.
+
+We can modify the state variable only through a special technique in React.
+We pass in a second paramater, basically a function that modifies the state variable. The name of the function would be same with a prefix of "set" + state variable name. (Industry Convention).
+
+The Superpowerful State Variable that we created using React Hook  useState() basically keeps the UI Layer in sync with the Data Layer. As soon as we perform any modifications or changes to the listofrestaurants, it will automatically refresh and reflect the changes into the UI layer!!!.
+
+WHENEVER A STATE VARIABLE UPDATES/CHANGES, REACT RE-RENDERS THE COMPONENT!!!!!
+
+The logic of updating the UI is known as Re-rendering and this is the superpower of React, it performs very fast and optimized Re-Rendering upon changes in the local state variables. It performs very fast DOM manipulation upon changes in state variable through hooks.
+
+
+#RECONCILIATION ALGORITHM(aka REACT FIBER):
+React basically uses this Reconciliation algorithm. This algorithm is also known as REACT FIBER.
+
+Whenever we have any UI, behind the scenes it is DOM object(Tree Like display of components).
+Whenever we have the UI, react creats a Virtual DOM of it.
+Virtual DOM in not real DOM, it is the representation of an actual DOM. (Actual DOM is the tags n all..).
+Virtual DOM is nothing but a React Object at the end of the day.
+
+
+#DIFF ALGORITHM:
+Diff Algorithm basically finds out the difference between 2 virtual DOMs, the previous Virtual DOM and the updated Virtual DOM.
+It will calculate the difference and then actually update the DOM on every render cycle!
+
+React can efficiently find out the difference between 2 virtuals DOMs and update the actual the UI -> the core of React's Algorithm!
+
+Why React is fast -> bcoz it has a DIFF Algorithm which can do fast, efficient and optimised DOM Manipulation!
+
+React is constantly keeping an eye on the State Variable, constantly tracking the State Variable created using the useState() React Hook and whenever these state varibles updates, React immediately trigger the diff algorithm, quickly finds out the difference between the 2 virtual DOMs and updates the UI AUTOMAGICALLY!!! It always keeps the UI Layer and the Data Layer in SYNC with eachother, which is the core of React Algorithm!! 

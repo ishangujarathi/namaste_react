@@ -1,0 +1,52 @@
+Time For Testing:
+
+Testing is very crucial part of SoftWare Development Cycle. It is important to write test cases to make sure our web app runs smoothly.
+
+Different Types of Developer Testing:
+
+1) Manual Testing -> Manually checking and testing each feature developed.
+
+2) Unit Testing -> It means we test our React Components in isolation.
+
+3) Integration Testing -> A Type of testing which involves writing code to test multiple components.
+
+4) End to End Testing(e2e Testing) -> Involves testing of all flows right from user login to user exiting the web app, testing all flows.
+
+Libraries required for testing:
+
+1) React Testing Library -> https://testing-library.com/docs/react-testing-library/intro/
+2) Jest -> https://jestjs.io/docs/getting-started
+3) Jest with Babel Dependencies -> https://jestjs.io/docs/getting-started
+
+# Setting up Testing in our web app:
+-> Install various React Testing Libraries
+-> Install Jest
+-> Install Babel Dependency
+-> Configure Babel (we will be using this so we have to disable the deafult babel configuration provided by Parcel).
+-> Configure Parcel config to disable default babel configuration
+-> Jest Configuration(npx jest --init)
+-> Selected jsdom as environment where our testcases will be executed/runned.The goal of the jsdom is to emulate enough of a subset of a web browser to be useful for testing.
+-> Install jsdom library.
+-> Whenever we are testing any UI Component inside React, we will have to render the component first on the jsdom.
+-> Install @babel/preset-react -> to maje JSX work in test cases
+-> Include @babel/preset-react inside my Babel Config
+-> Install npm i -D @testing-library/jest-dom
+
+
+# Steps to write tests:
+
+We write the test function/method, which takes 2 arguments
+ex- test("",()=>{}) "" -> string, which describes the test and ()=>{} callback function where we write the implementation of the testcase.
+
+ex-> test("some string",()=>{
+    const res = xyz(a,b);
+    expect(res).toBe(c);  //known as Assertion
+})
+
+To run test cases, type this command -> npm run test
+
+UI Component testing involves 3 things:
+
+1) Use Render method render(<component_name/>) to render the component onto the jsdom.
+2) Use const data = screen.getBy/getAllby method to query something rendered onto the screen.
+3) Use expect(data).toBe method to assert the queryed data.

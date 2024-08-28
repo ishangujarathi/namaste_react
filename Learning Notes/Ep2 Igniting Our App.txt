@@ -1,0 +1,6 @@
+
+#Within Package.json file, wrote 2 npm scripts
+"start" -> to build the project in development mode
+command : npm run start / npm start
+"build" -> to build the project in production mode
+command : npm run build
