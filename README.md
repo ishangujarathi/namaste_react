@@ -416,3 +416,5 @@ UI Component testing involves 3 things:
 2) Use const data = screen.getBy/getAllby method to query something rendered onto the screen.
 3) Use expect(data).toBe method to assert the queryed data.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fd171dfd-87a3-404b-a448-14de623974a8/deploy-status)](https://app.netlify.com/sites/foodfindr/deploys)
+
