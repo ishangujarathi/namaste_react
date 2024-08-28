@@ -23,7 +23,7 @@ import 'react-toastify/dist/ReactToastify.css';
  * Footer -> copywright, social media links, information, address
  */
 
-const Groccery = lazy(() => import("./components/Groccery"));
+
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
@@ -84,15 +84,6 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact/>,
-            },
-
-            {
-                path: "/groccery",
-                element:( 
-                <Suspense fallback={<Shimmer/>}>
-                    <Groccery/>
-                </Suspense>
-                ),
             },
 
             {
