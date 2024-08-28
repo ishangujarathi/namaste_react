@@ -1,6 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faUtensils, faDollarSign, faClock, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faUtensils, faRupeeSign, faTag } from '@fortawesome/free-solid-svg-icons';
 
 // Basic RestaurantCard Component
 const RestaurantCard = (props) => {
@@ -33,7 +33,7 @@ const RestaurantCard = (props) => {
         <span>{avgRating} stars</span>
       </div>
       <div className="flex items-center text-gray-600 mb-2">
-        <FontAwesomeIcon icon={faDollarSign} className="mr-2 text-green-500" />
+        <FontAwesomeIcon icon={faRupeeSign} className="mr-2 text-green-500" />
         <span>{costForTwo}</span>
       </div>
     </div>
