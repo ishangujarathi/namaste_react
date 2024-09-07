@@ -2,13 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRupeeSign } from "@fortawesome/free-solid-svg-icons/faRupeeSign"; // Import faRupeeSign icon
+import { faRupeeSign } from "@fortawesome/free-solid-svg-icons/faRupeeSign"; 
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
 
-  // Function to calculate the total price using the correct price access method
+ 
   const totalPrice = cartItems.reduce((total, item) => {
     const price = item.card.info.price
       ? item.card.info.price / 100
@@ -35,7 +35,6 @@ const Cart = () => {
         ) : (
           <>
             <ItemList items={cartItems} />
-            {/* Display total price towards the left with Font Awesome rupee icon */}
             <div className="mt-4 text-xl font-semibold flex items-center">
               Total Price: <FontAwesomeIcon icon={faRupeeSign} className="mx-2" /> 
               {totalPrice.toFixed(2)}
