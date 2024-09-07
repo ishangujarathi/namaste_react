@@ -1,10 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRupeeSign } from "@fortawesome/free-solid-svg-icons/faRupeeSign"; // Import faRupeeSign icon
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
+
+  // Function to calculate the total price using the correct price access method
+  const totalPrice = cartItems.reduce((total, item) => {
+    const price = item.card.info.price
+      ? item.card.info.price / 100
+      : item.card.info.defaultPrice / 100;
+    return total + price;
+  }, 0);
 
   const handleClearCart = () => {
     dispatch(clearCart());
@@ -23,7 +33,14 @@ const Cart = () => {
         {cartItems.length === 0 ? (
           <h1 className="text-xl text-gray-700 text-center">Cart is empty, please add items to your cart!</h1>
         ) : (
-          <ItemList items={cartItems} />
+          <>
+            <ItemList items={cartItems} />
+            {/* Display total price towards the left with Font Awesome rupee icon */}
+            <div className="mt-4 text-xl font-semibold flex items-center">
+              Total Price: <FontAwesomeIcon icon={faRupeeSign} className="mx-2" /> 
+              {totalPrice.toFixed(2)}
+            </div>
+          </>
         )}
       </div>
     </div>

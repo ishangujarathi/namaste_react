@@ -2,7 +2,7 @@ import { CDN_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faDollarSign, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { faRupeeSign } from "@fortawesome/free-solid-svg-icons/faRupeeSign";
