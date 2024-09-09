@@ -32,7 +32,7 @@ class About extends React.Component {
           {/* Description */}
           <div className="mb-6">
             <p className="text-base sm:text-lg mb-6 text-gray-700 mx-auto max-w-2xl leading-relaxed">
-              BiteStream is a modern front-end food ordering web application that integrates with Swiggy's live API to provide a seamless dining experience. Our platform allows users to explore a wide range of restaurants, view detailed menus, and place orders directly from their favorite eateries. With a user-friendly interface and real-time updates, BiteStream makes ordering food quick and easy.
+              BiteStream is a modern Front-end Food Ordering Web Application, which has been integrated with Swiggy's Live API to provide a seamless dining experience. Our platform allows users to explore a wide range of restaurants, view detailed menu's, search for top-rated restaurants and add items to their cart.
             </p>
           </div>
 
