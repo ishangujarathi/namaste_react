@@ -4,43 +4,43 @@ import { faUser, faEnvelope, faCommentDots } from '@fortawesome/free-solid-svg-i
 
 const Contact = () => {
   return (
-    <div className="container mx-auto my-10 p-6 bg-gray-100 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">Contact Us</h1>
-      <div className="w-full lg:w-8/12 xl:w-6/12 mx-auto bg-white p-8 rounded-lg shadow-md">
+    <div className="container mx-auto my-12 p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg shadow-xl">
+      <h1 className="text-5xl font-bold text-center mb-8 text-gray-900">Contact Us</h1>
+      <div className="w-full lg:w-9/12 xl:w-8/12 mx-auto bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
         <form>
-          <div className="mb-4 flex items-center border-b-2 border-gray-300">
-            <FontAwesomeIcon icon={faUser} className="text-gray-500 mr-3" />
+          <div className="mb-6 flex items-center border-b-2 border-gray-300 transition-transform duration-300 hover:scale-105">
+            <FontAwesomeIcon icon={faUser} className="text-gray-600 mr-4 text-2xl" />
             <input
-              className="w-full px-3 py-2 border-0 focus:outline-none focus:ring-0"
+              className="w-full px-4 py-3 text-lg border-0 focus:outline-none focus:ring-0"
               id="name"
               type="text"
               placeholder="Your Name"
             />
           </div>
-          <div className="mb-4 flex items-center border-b-2 border-gray-300">
-            <FontAwesomeIcon icon={faEnvelope} className="text-gray-500 mr-3" />
+          <div className="mb-6 flex items-center border-b-2 border-gray-300 transition-transform duration-300 hover:scale-105">
+            <FontAwesomeIcon icon={faEnvelope} className="text-gray-600 mr-4 text-2xl" />
             <input
-              className="w-full px-3 py-2 border-0 focus:outline-none focus:ring-0"
+              className="w-full px-4 py-3 text-lg border-0 focus:outline-none focus:ring-0"
               id="email"
               type="email"
               placeholder="Your Email"
             />
           </div>
-          <div className="mb-4 flex flex-col">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-              <FontAwesomeIcon icon={faCommentDots} className="text-gray-500 mr-3" />
+          <div className="mb-6 flex flex-col">
+            <label className="block text-gray-700 text-base font-semibold mb-2 flex items-center">
+              <FontAwesomeIcon icon={faCommentDots} className="text-gray-600 mr-4 text-xl" />
               Message
             </label>
             <textarea
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 text-lg border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
               id="message"
-              rows="4"
+              rows="5"
               placeholder="Your Message"
             ></textarea>
           </div>
           <div className="text-center">
             <button
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-colors duration-300"
               type="submit"
             >
               Send Message

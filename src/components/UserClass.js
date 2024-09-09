@@ -10,7 +10,8 @@ class UserClass extends React.Component {
     this.state = {
       userInfo: {
         name: "Dummy",
-        location: "Default"
+        location: "Default",
+        email: "ishan.gujarathi10@gmail.com" 
       }
     }
   }
@@ -20,7 +21,10 @@ class UserClass extends React.Component {
     const json = await data.json();
 
     this.setState({
-      userInfo: json,
+      userInfo: {
+        ...json,
+        email: this.state.userInfo.email 
+      },
     });
     console.log(json);
   }
@@ -34,7 +38,7 @@ class UserClass extends React.Component {
   }
 
   render() {
-    const { name, location } = this.state.userInfo;
+    const { name, location, email } = this.state.userInfo;
     return (
       <div className="user-card p-6 bg-white rounded-lg shadow-lg mt-6 flex items-center space-x-4 max-w-4xl mx-auto">
         {/* Avatar and Info */}
@@ -46,14 +50,16 @@ class UserClass extends React.Component {
           />
         </div>
         <div className="flex-1">
-          <h2 className="text-2xl font-bold mb-2">Developed by: {name}</h2>
+          <h2 className="text-3xl font-semibold mb-2 text-gray-800">
+            Developed by: <span className="text-indigo-600">{name}</span>
+          </h2>
           <div className="flex items-center mb-2">
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="text-gray-600 mr-2" />
-            <span className="text-xl font-semibold">{location}</span>
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="text-gray-600 mr-2 text-xl" />
+            <span className="text-xl font-medium text-gray-700">{location}</span>
           </div>
           <div className="flex items-center mb-4">
-            <FontAwesomeIcon icon={faEnvelope} className="text-gray-600 mr-2" />
-            <span className="text-lg font-medium text-gray-600">Contact: ishan.gujarathi10@gmail.com</span>
+            <FontAwesomeIcon icon={faEnvelope} className="text-gray-600 mr-2 text-lg" />
+            <span className="text-lg font-medium text-gray-600">Contact: <a href={`mailto:${email}`} className="text-indigo-600 hover:text-indigo-800">{email}</a></span>
           </div>
           <div className="flex items-center space-x-2">
             <FontAwesomeIcon icon={faGithub} className="text-2xl text-gray-800" />
