@@ -17,7 +17,7 @@ const ItemList = ({ items }) => {
     // Display success message
     toast.success(
       <div className="flex items-center">
-        <FontAwesomeIcon icon={faCheckCircle} className="mr-2" />
+        {/* <FontAwesomeIcon icon={faCheckCircle} className="mr-2" /> */}
         Item added to Cart Successfully!
       </div>
     );
